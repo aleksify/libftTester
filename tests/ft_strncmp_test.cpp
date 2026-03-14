@@ -42,9 +42,9 @@ int main(void)
 	size_t		len = strlen((const char *)str1);
 	auto sign = [](int x) { return (x > 0) - (x < 0); };
 	str2[3] = CHAR_MIN;
-	/* 17 */ check(sign(ft_strncmp((const char *)str1, (const char *)str2, len)) == sign(strncmp((const char *)str1, (const char *)str2, len)));
+	/* 17 */ check(sign(ft_strncmp((const char *)str1, (const char *)str2, len)) == sign(strncmp((const char *)str1, (const char *)str2, len))); showLeaks();
 	str2[3] = -42;
-	/* 18 */ check(sign(ft_strncmp((const char *)str1, (const char *)str2, len)) == sign(strncmp((const char *)str1, (const char *)str2, len)));
+	/* 18 */ check(sign(ft_strncmp((const char *)str1, (const char *)str2, len)) == sign(strncmp((const char *)str1, (const char *)str2, len))); showLeaks();
 
 	write(1, "\n", 1);
 	return (0);
